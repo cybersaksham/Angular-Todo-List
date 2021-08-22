@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Todo } from 'src/app/Models/todo';
 
 @Component({
@@ -17,12 +18,13 @@ export class TodoAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addTodo() {
+  addTodo(form: NgForm) {
     const todo__ = {
       title: this.title,
       desc: this.desc,
       active: true,
     }
+    form.resetForm();
     this.todoAdd.emit(todo__);
   }
 
