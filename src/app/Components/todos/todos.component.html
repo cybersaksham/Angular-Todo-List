@@ -3,7 +3,7 @@
 <hr>
 <div *ngIf="this.todos.length===0; else elseBlock">No Todos</div>
 <ng-template #elseBlock>
-    <div *ngFor="let todo of todos">
-        <app-todo-item [todo]="todo" (todoDelete)="dltTodo($event)"></app-todo-item>
+    <div *ngFor="let todo of todos; index as i">
+        <app-todo-item [todo]="todo" [i]="i" (todoDelete)="dltTodo($event)"></app-todo-item>
     </div>
 </ng-template>
