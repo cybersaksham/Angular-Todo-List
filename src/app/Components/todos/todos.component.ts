@@ -11,7 +11,7 @@ export class TodosComponent implements OnInit {
   todos: Todo[];
 
   constructor() {
-    this.todos = [];
+    this.todos = JSON.parse(sessionStorage.getItem("todos") || '[]');
   }
 
   ngOnInit(): void {
@@ -20,9 +20,11 @@ export class TodosComponent implements OnInit {
   dltTodo(todo: Todo) {
     let ind__ = this.todos.indexOf(todo);
     this.todos.splice(ind__, 1);
+    sessionStorage.setItem("todos", JSON.stringify(this.todos));
   }
-
+  
   addTodo(todo: Todo) {
     this.todos.push(todo);
+    sessionStorage.setItem("todos", JSON.stringify(this.todos));
   }
 }
