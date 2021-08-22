@@ -19,7 +19,7 @@ export class TodosComponent implements OnInit {
         active: true
       },
       {
-        sno: 3,
+        sno: 2,
         title: "Second Todo",
         desc: "This is the second todo",
         active: true
