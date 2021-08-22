@@ -30,4 +30,9 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  dltTodo(todo: Todo) {
+    let ind__ = this.todos.indexOf(todo);
+    this.todos.splice(ind__, 1);
+  }
+
 }
