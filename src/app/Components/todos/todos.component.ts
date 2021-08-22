@@ -22,9 +22,15 @@ export class TodosComponent implements OnInit {
     this.todos.splice(ind__, 1);
     sessionStorage.setItem("todos", JSON.stringify(this.todos));
   }
-  
+
   addTodo(todo: Todo) {
     this.todos.push(todo);
+    sessionStorage.setItem("todos", JSON.stringify(this.todos));
+  }
+
+  doneTodo(todo: Todo) {
+    let ind__ = this.todos.indexOf(todo);
+    this.todos[ind__].active = !this.todos[ind__].active;
     sessionStorage.setItem("todos", JSON.stringify(this.todos));
   }
 }

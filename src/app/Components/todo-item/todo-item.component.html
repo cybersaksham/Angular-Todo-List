@@ -2,7 +2,8 @@
     <div class="card-header" style="display: flex; justify-content: space-between;">
         <span [ngClass]="{'strike': !todo.active}">{{todo.title}}</span>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="todo{{i}}">
+            <input [checked]="!todo.active" (click)="clickDone(todo)" type="checkbox" class="form-check-input"
+                id="todo{{i}}">
             <label class="form-check-label" for="todo{{i}}">Done</label>
         </div>
     </div>
